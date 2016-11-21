@@ -45,7 +45,10 @@ public class Client {
                 Object obj = null;
                 try {
                     obj = connection.input.readObject();
-                    if(obj instanceof ArrayList) {
+                    if(obj instanceof String) {
+                            lobby.chatbox.append((String)obj);
+                        }
+                    else if(obj instanceof ArrayList) {
                         lobby.players = (ArrayList<Player>)obj;
                         lobby.refreshList();
                     }
@@ -60,5 +63,13 @@ public class Client {
         };
         playerThread = new Thread(players);
         playerThread.start();
+    }
+    
+    public void send(Object obj) {
+        try {
+            connection.output.writeObject(obj);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 }

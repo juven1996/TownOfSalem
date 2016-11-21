@@ -12,6 +12,7 @@ public class Lobby extends JPanel {
     
     PlayersList playerslist;
     ChatBox chatbox;
+    ChatText chatText;
     RoleList rolelist;
     ArrayList<Player> players;
     JButton start;
@@ -41,6 +42,21 @@ public class Lobby extends JPanel {
         add(rolelist, c);
         chatbox = new ChatBox(c);
         add(chatbox, c);
+        chatText = new ChatText(c);
+        chatText.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+               String text = chatText.getText();
+               chatbox.append(Game.player.name + ": " + text + "\n");
+               if(server != null) {
+                   server.sendAll(Game.player.name + ": " + text + "\n");
+               }
+               else {
+                   client.send(Game.player.name + ": " + text + "\n");
+               }
+               chatText.setText("");
+           } 
+        });
+        add(chatText, c);
         start = new JButton("Test");
         start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

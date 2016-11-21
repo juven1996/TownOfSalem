@@ -70,7 +70,10 @@ public class Server {
                     Object obj = null;
                     try {
                         obj = input.readObject();
-                        if (obj instanceof Player) {
+                        if(obj instanceof String) {
+                            lobby.chatbox.append((String)obj);
+                        }
+                        else if (obj instanceof Player) {
                             receivePlayer(obj);
                         }
                     } catch (Exception e) {
