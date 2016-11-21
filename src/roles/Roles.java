@@ -1,0 +1,21 @@
+package roles;
+
+public enum Roles {
+    SHERIFF,
+    DOCTOR,
+    INVESTIGATOR,
+    JAILOR,
+    MEDIUM,
+    GODFATHER,
+    FRAMER,
+    EXECUTIONER,
+    ESCORT,
+    MAFIOSO,
+    LOOKOUT,
+    SERIALKILLER,
+    TOWNKILLING,
+    RANDOMTOWN,
+    VIGILANTE,
+    VETERAN,
+    JESTER
+}
