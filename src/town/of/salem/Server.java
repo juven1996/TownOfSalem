@@ -87,9 +87,9 @@ public class Server {
 
         private void receivePlayer(Object obj) {
             Player player = (Player)obj;
-            lobby.players.add(player);
+            lobby.g.players.add(player);
             lobby.refreshList();
-            sendAll(lobby.players);
+            sendAll(lobby.g.players);
         }
         
         private void send(Object obj) {

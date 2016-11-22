@@ -2,22 +2,23 @@ package town.of.salem;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
 
-public class PlayersList extends JTextArea {
-
-    public PlayersList() {
-        setup();
-        components();
+public class Graveyard extends JTextArea {
+    
+    public Graveyard(GridBagConstraints c) {
+        setup(c);
     }
     
-    private void setup() {
+    private void setup(GridBagConstraints c) {
         setRows(15);
         setColumns(10);
-        append("Players\n");
         setEditable(false);
+        append("Graveyard\n");
         setBorder(BorderFactory.createLineBorder(Color.black));
+        position(c);
     }
     
     private void position(GridBagConstraints c) {
@@ -29,4 +30,5 @@ public class PlayersList extends JTextArea {
     private void components() {
         
     }
+
 }

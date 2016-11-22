@@ -1,12 +1,17 @@
 package town.of.salem;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Game extends JFrame {
     
     static Player player = new Player("A");
+    ArrayList<Player> players;
+    
+    Server server;
+    Client client;
     
     protected Game() {
         setup();

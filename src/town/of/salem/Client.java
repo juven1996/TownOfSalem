@@ -49,7 +49,7 @@ public class Client {
                             lobby.chatbox.append((String)obj);
                         }
                     else if(obj instanceof ArrayList) {
-                        lobby.players = (ArrayList<Player>)obj;
+                        lobby.g.players = (ArrayList<Player>)obj;
                         lobby.refreshList();
                     }
                     else if(obj instanceof Roles) {

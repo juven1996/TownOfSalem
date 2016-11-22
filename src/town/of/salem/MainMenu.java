@@ -33,8 +33,8 @@ public class MainMenu extends JPanel {
         JButton button = new JButton("Host Game");
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Lobby lobby = new Lobby(Type.HOST);
-                lobby.players.add(g.player);
+                Lobby lobby = new Lobby(Type.HOST, g);
+                lobby.g.players.add(g.player);
                 lobby.refreshList();
                 g.showMenu(lobby);
             }
@@ -43,7 +43,7 @@ public class MainMenu extends JPanel {
         button = new JButton("Join Game");
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Lobby lobby = new Lobby(Type.CLIENT);
+                Lobby lobby = new Lobby(Type.CLIENT, g);
                 g.showMenu(lobby);
             }
         });

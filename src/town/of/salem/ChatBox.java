@@ -6,14 +6,13 @@ import javax.swing.JTextArea;
 
 public class ChatBox extends JTextArea {
     
-    public ChatBox(GridBagConstraints c) {
-        setup(c);
+    public ChatBox() {
+        setup();
     }
     
-    private void setup(GridBagConstraints c) {
-        setRows(10);
+    private void setup() {
+        setRows(20);
         setColumns(30);
-        position(c);
         setEditable(false);
     }
     

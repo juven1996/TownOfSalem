@@ -6,12 +6,11 @@ import javax.swing.JTextField;
 
 public class ChatText extends JTextField {
     
-    public ChatText(GridBagConstraints c) {
-        setup(c);
+    public ChatText() {
+        setup();
     }
     
-    private void setup(GridBagConstraints c) {
-        position(c);
+    private void setup() {
     }
     
     private void position(GridBagConstraints c) {
