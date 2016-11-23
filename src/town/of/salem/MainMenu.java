@@ -9,23 +9,24 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MainMenu extends JPanel {
-    
+
     public enum Type {
+
         CLIENT, HOST
     }
-    
+
     Game g;
 
     public MainMenu(Game g) {
         this.g = g;
         setup();
     }
-    
+
     private void setup() {
         setLayout(new GridBagLayout());
         components();
     }
-    
+
     private void components() {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = c.gridy = 0;
@@ -51,10 +52,15 @@ public class MainMenu extends JPanel {
         add(button, c);
         button = new JButton("Set Name");
         button.addActionListener((ActionEvent event) -> {
-            String name;
-            do {
-                name = JOptionPane.showInputDialog("Enter Username: ");
-            } while(name == null);
+            String name="John Doe";
+            String result = JOptionPane.showInputDialog("Enter Username: ");
+            if ((result.trim() != null) && (result.trim().length() > 0)) {
+                name = result.trim();
+            } else {
+                do {
+                    result = JOptionPane.showInputDialog("Enter Username: ");
+                } while ((result.trim() == null) || (result.trim().length() == 0));
+            }
             g.player = new Player(name);
         });
         c.gridy = 2;
