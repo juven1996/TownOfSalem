@@ -15,6 +15,8 @@ public class Game extends JFrame {
     
     protected Game() {
         setup();
+        players = new ArrayList<>();
+        addGarbagePlayers();
     }
     
     private void setup() {
@@ -30,5 +32,11 @@ public class Game extends JFrame {
         this.setContentPane(panel);
         panel.revalidate();
         panel.repaint();
+    }
+    
+    protected void addGarbagePlayers() {
+        players.add(new Player("Bob"));
+        players.add(new Player("Carl"));
+        players.add(new Player("Joe"));
     }
 }

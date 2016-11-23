@@ -24,7 +24,6 @@ public class Lobby extends JPanel {
     
     public Lobby(MainMenu.Type type, Game g) {
         this.g = g;
-        g.players = new ArrayList<>();
         setLayout(new GridBagLayout());
         addComponents();
         if(type == MainMenu.Type.HOST)
